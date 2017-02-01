@@ -59,6 +59,17 @@ class Kitten {
   static all() {
     return Kitten.allKittens;
   }
+  static first() {
+    return Kitten.allKittens[0];
+  }
+  static last() {
+    return Kitten.allKittens[Kitten.allKittens.length - 1];
+  }
+  static meow() {
+    Kitten.allKittens.forEach(function(kitten){
+      kitten.meow()
+    })
+  }
 }
 
 
