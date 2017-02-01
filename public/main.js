@@ -39,6 +39,7 @@ class Kitten {
       data: {kitten: kitten}
     })
     .then(response => {
+      Kitten.fetch();
       console.log(response)
     })
   }
@@ -57,7 +58,11 @@ class Kitten {
     })
   }
   static all() {
-    return Kitten.allKittens;
+    if (Kitten.allKittens) {
+      return Kitten.allKittens;
+    } else {
+      return Kitten.allKittens = [];
+    }
   }
   static first() {
     return Kitten.allKittens[0];
